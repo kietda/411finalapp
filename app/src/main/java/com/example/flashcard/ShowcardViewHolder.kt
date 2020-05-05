@@ -13,6 +13,23 @@ class ShowcardViewHolder constructor(itemView: View) :
     fun bind(card: Card) {
         itemView.categoryTitle.text = card.title
         itemView.categoryContent.text = card.content
+
+    }
+
+    fun toggleBottomView() {
+        itemView.viewBottom.visibility = if (itemView.viewBottom.visibility == View.VISIBLE) {
+            View.INVISIBLE
+        } else {
+            View.VISIBLE
+        }
+    }
+
+    fun toggleTopView() {
+        itemView.viewRoot.visibility = if (itemView.viewRoot.visibility == View.VISIBLE) {
+            View.INVISIBLE
+        } else {
+            View.VISIBLE
+        }
     }
 
 }
