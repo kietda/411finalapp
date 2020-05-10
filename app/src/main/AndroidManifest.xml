@@ -12,8 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ShowcardActivity"></activity>
-        <activity android:name=".SlideshowActivity" />
+        <activity android:name=".AddcardActivity"/>
+        <activity android:name=".ShowcardActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

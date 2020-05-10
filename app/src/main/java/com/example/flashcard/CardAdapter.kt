@@ -1,14 +1,16 @@
 package com.example.flashcard
 
+//import com.bumptech.glide.Glide
 import android.content.Context
+import android.content.DialogInterface
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
-//import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_card.view.*
-
+private const val TAG = "ABC_CardAdapter"
 class CardAdapter(private val context: Context, private val cards: List<Card>)
     : RecyclerView.Adapter<CardAdapter.ViewHolder>() {
 
@@ -19,7 +21,7 @@ class CardAdapter(private val context: Context, private val cards: List<Card>)
     // Returns the total count of items in the list
     override fun getItemCount() = cards.size
 
-    // Involves populating data into the item through holder - NOT expensive
+    // Involves populating data into the item through holder
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val card = cards[position]
         holder.bind(card)
@@ -29,7 +31,29 @@ class CardAdapter(private val context: Context, private val cards: List<Card>)
         fun bind(card: Card) {
             itemView.tvTitle.text = card.title
             itemView.tvContent.text = "Age: ${card.content}"
-//            Glide.with(context).load(card.imageUrl).into(itemView.ivProfile)
+            itemView.setOnClickListener {
+                val dialogBuilder = AlertDialog.Builder(context)
+                dialogBuilder.setMessage("Do you want to delete this card?")
+                    .setCancelable(false)
+
+                    .setPositiveButton("Yes", DialogInterface.OnClickListener {
+                            dialog, id -> dialog.cancel()
+
+                        // do action here >> delete the card
+
+
+                    })
+
+                    .setNegativeButton("No", DialogInterface.OnClickListener {
+                            dialog, id -> dialog.cancel()
+                    })
+                // create dialog box
+                val alert = dialogBuilder.create()
+                // set title for alert dialog box
+                alert.setTitle("Notice")
+                // show alert dialog
+                alert.show()
+            }
         }
     }
 }

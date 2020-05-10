@@ -4,7 +4,7 @@ data class Card (
     val title: String,
     val content: String
 ){
-//    override fun toString(): String {
-//        return """{"published": "$published", "author": "$author", "title" : "$title", "first_sentence" : "$first_sentence"}"""
-//    }
+    override fun toString(): String {
+        return """{"title": "$title", "content" : "$content"}"""
+    }
 }

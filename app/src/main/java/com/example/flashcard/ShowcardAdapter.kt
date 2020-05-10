@@ -18,11 +18,18 @@ class ShowcardAdapter( private val cards: List<Card>) : RecyclerView.Adapter<Sho
 
         //holder.toggle()
         holder.itemView.categoryTitle.setOnClickListener {
-            holder.toggleBottomView()
+            holder.toggleView()
+        };
+
+        holder.itemView.viewRoot.setOnClickListener {
+            holder.toggleView()
         };
 
         holder.itemView.categoryContent.setOnClickListener {
-            holder.toggleTopView()
+            holder.toggleView()
+        }
+        holder.itemView.viewContent.setOnClickListener {
+            holder.toggleView()
         }
 
     }

@@ -7,7 +7,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/viewRoot"
         android:layout_width="match_parent"
-        android:layout_height="216dp"
+        android:layout_height="match_parent"
         android:layout_marginTop="8dp"
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
@@ -25,10 +25,10 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/viewBottom"
+        android:id="@+id/viewContent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="230dp"
+        android:layout_marginTop="8dp"
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
         app:cardBackgroundColor="@color/colorPrimaryDark"
