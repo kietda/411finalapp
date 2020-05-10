@@ -30,7 +30,7 @@ class CardAdapter(private val context: Context, private val cards: List<Card>)
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(card: Card) {
             itemView.tvTitle.text = card.title
-            itemView.tvContent.text = "Age: ${card.content}"
+            itemView.tvContent.text = card.content
             itemView.setOnClickListener {
                 val dialogBuilder = AlertDialog.Builder(context)
                 dialogBuilder.setMessage("Do you want to delete this card?")
