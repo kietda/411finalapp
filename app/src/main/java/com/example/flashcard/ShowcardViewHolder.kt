@@ -11,7 +11,6 @@ class ShowcardViewHolder constructor(itemView: View) :
     constructor(parent: ViewGroup) :
             this(LayoutInflater.from(parent.context).inflate(R.layout.showcard_item, parent, false))
     fun bind(card: Card) {
-//        itemView.categoryTitle.text = card.title
         itemView.categoryContent.text = card.content
         itemView.categoryTitle.text = card.title
         itemView.categoryContent.visibility = View.INVISIBLE

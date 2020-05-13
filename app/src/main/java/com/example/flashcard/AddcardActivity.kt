@@ -3,7 +3,6 @@ package com.example.flashcard
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
 import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
@@ -14,7 +13,6 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.RequestBody.Companion.toRequestBody
 import org.json.JSONObject
 import java.io.IOException
-import java.util.concurrent.CountDownLatch
 
 
 private const val TAG = "ABC_AddcardActitity"
@@ -60,12 +58,10 @@ class AddcardActivity : AppCompatActivity() {
                     val aresponse = response.body?.string()
                     Log.i(TAG, "dont know aresponse type$aresponse")
                     if (aresponse == "") {
-                        // addingResultTextView.text = "same card errors!"
                         Log.i(TAG, "same card error!")
                         setReturnedResult("",Activity.RESULT_CANCELED)
                     } else {
                         Log.i(TAG, "get card success$aresponse")
-                        //addingResultTextView.text = ""
                         val body = aresponse.toString()
                         val gb = GsonBuilder().create()
                         val acard = gb.fromJson(body, Card::class.java)

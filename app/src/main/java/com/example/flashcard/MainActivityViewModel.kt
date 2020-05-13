@@ -7,7 +7,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.gson.GsonBuilder
 import okhttp3.*
-import okhttp3.MediaType.Companion.toMediaType
 import java.io.IOException
 import java.util.concurrent.CountDownLatch
 
@@ -48,7 +47,6 @@ class MainActivityViewModel:ViewModel() {
             }
         })
         Log.i(TAG,"Create cards")
-//        for (i in 1..150) cards.add(Card("Title #$i", "Content #$i"))
         countDownLatch.await()
 
         return cards

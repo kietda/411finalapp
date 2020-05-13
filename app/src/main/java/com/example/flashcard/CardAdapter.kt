@@ -1,9 +1,8 @@
 package com.example.flashcard
 
-//import com.bumptech.glide.Glide
+
 import android.content.Context
 import android.content.DialogInterface
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,24 +32,16 @@ class CardAdapter(private val context: Context, private val cards: List<Card>)
             itemView.tvContent.text = card.content
             itemView.setOnClickListener {
                 val dialogBuilder = AlertDialog.Builder(context)
-                dialogBuilder.setMessage("Do you want to delete this card?")
+                dialogBuilder.setMessage(card.content)
                     .setCancelable(false)
-
-                    .setPositiveButton("Yes", DialogInterface.OnClickListener {
+                    .setPositiveButton("OK", DialogInterface.OnClickListener {
                             dialog, id -> dialog.cancel()
-
-                        // do action here >> delete the card
-
-
-                    })
-
-                    .setNegativeButton("No", DialogInterface.OnClickListener {
-                            dialog, id -> dialog.cancel()
+                        // do action here >> delete the card, but we don't have time to finish
                     })
                 // create dialog box
                 val alert = dialogBuilder.create()
                 // set title for alert dialog box
-                alert.setTitle("Notice")
+                alert.setTitle(card.title)
                 // show alert dialog
                 alert.show()
             }

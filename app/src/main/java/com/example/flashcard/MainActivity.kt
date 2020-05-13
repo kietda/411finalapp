@@ -2,12 +2,10 @@ package com.example.flashcard
 
 
 import android.app.Activity
-import android.content.ClipData.newIntent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat.startActivityForResult
 import android.content.Intent;
 import android.view.Gravity
 import android.widget.Toast
